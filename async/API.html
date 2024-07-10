@@ -1,0 +1,105 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #111;
+        color: #fff;
+      }
+      img {
+        height: 5vw;
+        width: 5vw;
+      }
+      .card {
+        height: 12vw;
+        width: 13vw;
+        background-color: #333;
+        border-radius: 15px;
+        display: none;
+      }
+      button {
+        margin-bottom: 2vw;
+        padding: 1em 2em;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: #2c9caf;
+        transition: all 1000ms;
+        font-size: 15px;
+        position: relative;
+        overflow: hidden;
+        outline: 2px solid #2c9caf;
+      }
+
+      button:hover {
+        color: #ffffff;
+        transform: scale(1.1);
+        outline: 2px solid #70bdca;
+        box-shadow: 4px 5px 17px -4px #268391;
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        left: -50px;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background-color: #2c9caf;
+        transform: skewX(45deg);
+        z-index: -1;
+        transition: width 1000ms;
+      }
+
+      button:hover::before {
+        width: 250%;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Get User</button>
+    <div class="card">
+      <div class="imageBox"></div>
+        <p class = "username"></p>
+        <p class="follow">Followers =></p>
+    </div>
+
+    <script>
+      const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+      const card = document.querySelector(".card");
+      const image = document.querySelector(".imageBox");
+      const button = document.querySelector("button");
+      const username = document.querySelector(".username")
+      const follow = document.querySelector(".follow")
+      const xhr = new XMLHttpRequest();
+
+      button.addEventListener("click", () => {
+        xhr.open("GET", requestUrl);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            image.innerHTML = `<img src = "${data.avatar_url}">`
+            username.textContent = data.login
+            follow.innerHTML += data.followers
+            card.style.display = "grid"
+            card.style.alignItems = "center"
+            card.style.justifyItems = "center"
+            card.style.padding = "1vw"
+
+
+
+          }
+        };
+        xhr.send();
+      });
+    </script>
+  </body>
+</html>

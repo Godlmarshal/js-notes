@@ -1,0 +1,12 @@
+Events in Javascript for Listeners |-
+
+
+(1) Type =>
+
+(2) Timestamp => It provides the time of when the object was created.
+
+(3) PreventDefault => It is used to stop refreshing the page when we add a data inside something. for example - forms at time of submit.
+
+(4) Target => It is used for Event delegation and it means selecting a parent and then accessing its children through target method it is efficient and you dont have to select multiple elements.
+
+(5)To element => 
