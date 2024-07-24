@@ -137,4 +137,9 @@ indArray = ["m", "a", "y", "a", "n", "k"]
 let indVal = indArray.indexOf("n") // returns the index number here
 // console.log(indVal)
 
+const arr1 = [1, 2, 3]
+const arr2 = [4, 5, 6]
+const arr3 = [7, 8, 9]
 
+let mergedArray = arr1.concat(arr2).concat(arr3)
+/* console.log(mergedArray) */

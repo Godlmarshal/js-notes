@@ -53,7 +53,7 @@ console.log(teacher1) */
 
 // static keyword
 
-
+/* 
 class User {
     constructor(username, email) {
         this.username = username
@@ -65,7 +65,10 @@ class User {
 }
 const user1 = new User("mayank", "m@something.com")
 
-console.log(user1.logMe())
+console.log(user1.logMe()) */
 
 // static even works with their instances so you cant access logme even in their instances
+
+
+
 
