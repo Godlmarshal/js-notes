@@ -68,7 +68,26 @@ const user1 = new User("mayank", "m@something.com")
 console.log(user1.logMe()) */
 
 // static even works with their instances so you cant access logme even in their instances
+/* 
+const user = {
+    userName :"mayank",
+    welcomeMessage() {
+        console.log(`my name is ${this.userName}`)
+    },
+    signedIn : false
+}
+
+user.welcomeMessage()
+console.log(user["userName"]); */
 
 
+function user(userName, password) {
+    this.userName = userName
+    this.password = password
+    return this;
+}
 
-
+const userOne = new user("mayank", "bitcoin@99")
+const userTwo = new user("hemu", "bit")
+console.log(userOne)
+console.log(userTwo);

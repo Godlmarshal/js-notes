@@ -68,7 +68,7 @@ console.log(game2.genre); */
 // adding propeties to the boss (object)
 
 
-const statesAndCapital = {
+/* const statesAndCapital = {
     punjab: "chandigarh",
     uttarpradesh: "lucknow",
     
@@ -87,3 +87,37 @@ statesAndCapital.newState()
 console.log(statesAndCapital)
 
 
+ */
+
+
+const myArray = [1, 2, 3, 4, 5];
+
+// const obj = { ...myArray }
+
+// const obj = Object.fromEntries(myArray.map((i, e)=> [e, i]))
+
+//const obj = myArray.reverse()
+
+function user(player, score) {
+    this.player = player
+    this.score = score
+}
+
+user.prototype.increment = function increment() {
+    this.score++
+}
+
+const user1 = new user("hitesh", 85)
+
+user1.increment()
+
+//console.log(user1)
+
+
+
+let myStr = "shikimori    "
+
+Object.prototype.trueLength = function () {
+    return this.trim().length
+}
+console.log(myStr.trueLength())
